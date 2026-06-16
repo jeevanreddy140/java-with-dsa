@@ -1,0 +1,78 @@
+JAVA PRACTICE PROBLEMS
+BASICS
+Print Hello World.
+Print your name and age.
+Swap two numbers.
+Find largest of two numbers.
+Find largest of three numbers.
+Calculate simple interest.
+Calculate area of circle.
+OPERATORS
+Check even or odd.
+Check positive or negative.
+Find remainder.
+Demonstrate increment and decrement.
+Evaluate arithmetic expressions.
+CONTROL STATEMENTS
+Check voting eligibility.
+Find grade using marks.
+Print 1-100 using for loop.
+Print even numbers.
+Print odd numbers.
+Multiplication table.
+Factorial of a number.
+Fibonacci series.
+Prime number check.
+Prime numbers from 1-100.
+STRINGS
+Reverse a string.
+Count vowels.
+Check palindrome.
+Count words.
+Remove spaces.
+Convert lowercase to uppercase.
+Find duplicate characters.
+Compare two strings.
+Check anagram.
+Find frequency of characters.
+FUNCTIONS
+Addition using method.
+Factorial using method.
+Prime number using method.
+Fibonacci using method.
+Maximum of two numbers.
+Area calculation using methods.
+Method overloading examples.
+ARRAYS
+Find largest element.
+Find smallest element.
+Sum of array.
+Average of array.
+Reverse array.
+Sort array.
+Find second largest.
+Search element.
+Remove duplicates.
+Merge two arrays.
+OOPS
+Student class.
+Employee class.
+Constructor example.
+Encapsulation example.
+Single inheritance.
+Multilevel inheritance.
+Hierarchical inheritance.
+Method overloading.
+Method overriding.
+Interface implementation.
+MULTITHREADING
+Create thread using Thread class.
+Create thread using Runnable.
+Print numbers using thread.
+Demonstrate sleep().
+Demonstrate join().
+Synchronization example.
+Producer Consumer problem.
+Multiple threads execution.
+Thread priority example.
+Thread communication.
