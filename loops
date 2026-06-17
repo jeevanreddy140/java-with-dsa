@@ -1,0 +1,8 @@
+for(intitialize of variable;condition;increment/decrement)
+{
+for(intialize of variable;condtion;increment/decrement)
+{
+Statement2;
+}
+statement1;
+}
