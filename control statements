@@ -1,0 +1,276 @@
+What Are Control Statements?
+
+Control statements determine the flow of execution in a program. They allow decisions, repetition, and branching.
+
+There are three main categories:
+
+1. Selection (Decision-Making) Statements
+
+Used to choose between different execution paths.
+
+if Statement
+int age = 20;
+
+if (age >= 18)
+{
+    printf("Eligible to vote");
+}
+if-else Statement
+int num = 5;
+
+if (num % 2 == 0)
+{
+    printf("Even");
+}
+else
+{
+    printf("Odd");
+}
+else-if Ladder
+int marks = 75;
+
+if (marks >= 90)
+    printf("A");
+else if (marks >= 75)
+    printf("B");
+else if (marks >= 60)
+    printf("C");
+else
+    printf("Fail");
+switch Statement
+int day = 3;
+
+switch(day)
+{
+    case 1: printf("Monday"); break;
+    case 2: printf("Tuesday"); break;
+    case 3: printf("Wednesday"); break;
+    default: printf("Invalid");
+}
+2. Iteration (Looping) Statements
+
+Used to execute a block repeatedly.
+
+for Loop
+for(int i = 1; i <= 5; i++)
+{
+    printf("%d ", i);
+}
+
+Output:
+
+1 2 3 4 5
+while Loop
+int i = 1;
+
+while(i <= 5)
+{
+    printf("%d ", i);
+    i++;
+}
+do-while Loop
+int i = 1;
+
+do
+{
+    printf("%d ", i);
+    i++;
+}
+while(i <= 5);
+
+Difference: do-while executes at least once.
+
+3. Jump Statements
+
+Used to alter normal program flow.
+
+break
+for(int i=1; i<=10; i++)
+{
+    if(i==5)
+        break;
+
+    printf("%d ", i);
+}
+
+Output:
+
+1 2 3 4
+continue
+for(int i=1; i<=5; i++)
+{
+    if(i==3)
+        continue;
+
+    printf("%d ", i);
+}
+
+Output:
+
+1 2 4 5
+goto
+goto label;
+
+printf("This won't execute");
+
+label:
+printf("Jumped here");
+
+Usually avoided in modern programming.
+
+return
+int add(int a, int b)
+{
+    return a + b;
+}
+Important Programs Using Control Statements
+1. Check Even or Odd
+int num = 12;
+
+if(num % 2 == 0)
+    printf("Even");
+else
+    printf("Odd");
+2. Find Largest of Three Numbers
+int a=10,b=20,c=15;
+
+if(a>b && a>c)
+    printf("A is largest");
+else if(b>c)
+    printf("B is largest");
+else
+    printf("C is largest");
+3. Factorial Using Loop
+int n=5;
+int fact=1;
+
+for(int i=1;i<=n;i++)
+{
+    fact*=i;
+}
+
+printf("%d",fact);
+
+Output:
+
+120
+4. Prime Number Check
+int n=13, flag=1;
+
+for(int i=2;i<n;i++)
+{
+    if(n%i==0)
+    {
+        flag=0;
+        break;
+    }
+}
+
+if(flag)
+    printf("Prime");
+else
+    printf("Not Prime");
+5. Fibonacci Series
+int a=0,b=1,c,n=10;
+
+printf("%d %d ",a,b);
+
+for(int i=3;i<=n;i++)
+{
+    c=a+b;
+    printf("%d ",c);
+
+    a=b;
+    b=c;
+}
+6. Reverse a Number
+int num=1234, rev=0;
+
+while(num>0)
+{
+    rev = rev*10 + num%10;
+    num/=10;
+}
+
+printf("%d",rev);
+7. Sum of Digits
+int num=1234, sum=0;
+
+while(num>0)
+{
+    sum += num%10;
+    num/=10;
+}
+
+printf("%d",sum);
+8. Multiplication Table
+int n=5;
+
+for(int i=1;i<=10;i++)
+{
+    printf("%d x %d = %d\n",n,i,n*i);
+}
+Frequently Asked Interview Questions
+Basic
+What are control statements?
+What is the difference between if and switch?
+What is the difference between while and do-while?
+When should switch be preferred over if-else?
+What is the purpose of break and continue?
+Intermediate
+What happens if break is omitted in a switch case?
+Can a switch statement work with floating-point values in C?
+Explain nested loops with an example.
+What is an infinite loop?
+How do you exit multiple nested loops?
+Program-Based
+Write a program to check whether a number is prime.
+Write a program to print Armstrong numbers.
+Write a program to reverse a number.
+Write a program to check palindrome numbers.
+Write a program to print patterns using loops.
+Find factorial without using recursion.
+Print Fibonacci series.
+Find the largest and smallest elements in an array.
+Count vowels and consonants in a string.
+Generate multiplication tables.
+Tricky Interview Questions
+
+Q: Difference between break and continue?
+
+Answer:
+
+break terminates the loop completely.
+continue skips the current iteration and moves to the next iteration.
+
+Q: Will this execute?
+
+while(0)
+{
+    printf("Hello");
+}
+
+Answer: No, because the condition is false initially.
+
+Q: How many times will this loop run?
+
+for(;;)
+{
+    printf("Hi");
+}
+
+Answer: Infinite times unless interrupted.
+
+Interview Tip
+
+For campus placements and fresher interviews, focus on:
+
+if, if-else, switch
+for, while, do-while
+break, continue
+Prime number
+Palindrome
+Factorial
+Fibonacci
+Pattern programs
+Armstrong number
