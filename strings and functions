@@ -1,0 +1,393 @@
+What is a String?
+
+A string is a sequence of characters enclosed within double quotes.
+
+Example:
+
+char name[] = "OpenAI";
+
+Here:
+
+O, p, e, n, A, I are characters.
+'\0' (null character) is automatically added at the end.
+
+Memory Representation:
+
+O  p  e  n  A  I  \0
+String Declaration and Initialization
+Method 1
+char str[10] = "Hello";
+Method 2
+char str[] = "Hello";
+Method 3
+char str[6] = {'H','e','l','l','o','\0'};
+Common String Functions (string.h)
+
+To use string functions:
+
+#include <string.h>
+1. strlen()
+
+Finds the length of a string.
+
+char str[] = "Programming";
+
+printf("%d", strlen(str));
+
+Output:
+
+11
+2. strcpy()
+
+Copies one string into another.
+
+char source[] = "Hello";
+char dest[20];
+
+strcpy(dest, source);
+
+printf("%s", dest);
+
+Output:
+
+Hello
+3. strcat()
+
+Concatenates (joins) strings.
+
+char str1[20] = "Hello ";
+char str2[] = "World";
+
+strcat(str1, str2);
+
+printf("%s", str1);
+
+Output:
+
+Hello World
+4. strcmp()
+
+Compares two strings.
+
+char str1[] = "Apple";
+char str2[] = "Apple";
+
+printf("%d", strcmp(str1,str2));
+
+Output:
+
+0
+
+Meaning:
+
+0 → Equal
+Negative → First string smaller
+Positive → First string greater
+5. strchr()
+
+Finds first occurrence of a character.
+
+char str[] = "Programming";
+
+printf("%s", strchr(str,'g'));
+
+Output:
+
+gramming
+6. strstr()
+
+Finds a substring.
+
+char str[] = "Programming Language";
+
+printf("%s", strstr(str,"Language"));
+
+Output:
+
+Language
+String Input and Output
+Using scanf()
+char name[20];
+
+scanf("%s",name);
+
+Limitation:
+
+Stops reading at space.
+
+Input:
+
+John Doe
+
+Output:
+
+John
+Using gets() (Old Method)
+gets(name);
+
+Not recommended.
+
+Using fgets()
+fgets(name,sizeof(name),stdin);
+
+Safer method.
+
+Important String Programs
+1. Find String Length Without strlen()
+#include<stdio.h>
+
+int main()
+{
+    char str[]="Hello";
+    int i=0;
+
+    while(str[i]!='\0')
+    {
+        i++;
+    }
+
+    printf("Length = %d",i);
+
+    return 0;
+}
+2. Reverse a String
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str[]="HELLO";
+
+    int len=strlen(str);
+
+    for(int i=len-1;i>=0;i--)
+    {
+        printf("%c",str[i]);
+    }
+
+    return 0;
+}
+
+Output:
+
+OLLEH
+3. Palindrome String
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str[]="madam";
+
+    int start=0;
+    int end=strlen(str)-1;
+    int flag=1;
+
+    while(start<end)
+    {
+        if(str[start]!=str[end])
+        {
+            flag=0;
+            break;
+        }
+
+        start++;
+        end--;
+    }
+
+    if(flag)
+        printf("Palindrome");
+    else
+        printf("Not Palindrome");
+}
+4. Copy String Without strcpy()
+#include<stdio.h>
+
+int main()
+{
+    char str1[]="Hello";
+    char str2[20];
+
+    int i=0;
+
+    while(str1[i]!='\0')
+    {
+        str2[i]=str1[i];
+        i++;
+    }
+
+    str2[i]='\0';
+
+    printf("%s",str2);
+}
+5. Concatenate Two Strings Without strcat()
+#include<stdio.h>
+
+int main()
+{
+    char str1[30]="Hello";
+    char str2[]="World";
+
+    int i=0,j=0;
+
+    while(str1[i]!='\0')
+        i++;
+
+    while(str2[j]!='\0')
+    {
+        str1[i]=str2[j];
+        i++;
+        j++;
+    }
+
+    str1[i]='\0';
+
+    printf("%s",str1);
+}
+
+Output:
+
+HelloWorld
+6. Count Vowels and Consonants
+#include<stdio.h>
+
+int main()
+{
+    char str[]="Programming";
+    int vowels=0, consonants=0;
+
+    for(int i=0;str[i]!='\0';i++)
+    {
+        char ch=str[i];
+
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+           ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+            vowels++;
+        else
+            consonants++;
+    }
+
+    printf("Vowels = %d\n",vowels);
+    printf("Consonants = %d",consonants);
+}
+7. Count Words in a Sentence
+#include<stdio.h>
+
+int main()
+{
+    char str[]="I Love Programming";
+    int count=1;
+
+    for(int i=0;str[i]!='\0';i++)
+    {
+        if(str[i]==' ')
+            count++;
+    }
+
+    printf("Words = %d",count);
+}
+8. Remove Spaces From String
+#include<stdio.h>
+
+int main()
+{
+    char str[]="Hello World";
+    int i,j=0;
+
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]!=' ')
+        {
+            str[j]=str[i];
+            j++;
+        }
+    }
+
+    str[j]='\0';
+
+    printf("%s",str);
+}
+
+Output:
+
+HelloWorld
+Frequently Asked String Interview Questions
+Theory Questions
+1. What is a string?
+
+A collection of characters terminated by '\0'.
+
+2. Difference between character array and string?
+char ch = 'A';
+char str[] = "A";
+Character stores one character.
+String stores multiple characters.
+3. What is null character?
+'\0'
+
+Marks the end of a string.
+
+4. Difference between strlen() and sizeof()?
+
+Example:
+
+char str[]="Hello";
+strlen(str) = 5
+sizeof(str) = 6
+
+Reason:
+
+strlen() excludes '\0'.
+sizeof() includes '\0'.
+5. Difference between strcpy() and strncpy()?
+strcpy() copies entire string.
+strncpy() copies specified number of characters.
+6. Difference between strcmp() and strncmp()?
+strcmp() compares whole strings.
+strncmp() compares first n characters.
+7. Why is gets() unsafe?
+
+It does not check buffer size, causing buffer overflow.
+
+8. Difference between scanf() and fgets()?
+scanf()	fgets()
+Stops at space	Reads entire line
+Less safe	Safer
+Programming Interview Questions
+Easy
+Find length of string without strlen().
+Reverse a string.
+Count vowels and consonants.
+Count digits in a string.
+Convert lowercase to uppercase.
+Convert uppercase to lowercase.
+Count spaces.
+Medium
+Check palindrome string.
+Compare two strings without strcmp().
+Copy string without strcpy().
+Concatenate strings without strcat().
+Find frequency of each character.
+Remove duplicate characters.
+Remove spaces from string.
+Find first non-repeating character.
+Advanced
+Check whether two strings are anagrams.
+Find longest word in a sentence.
+Reverse words in a sentence.
+Find all duplicate characters.
+Implement your own strlen(), strcpy(), and strcmp() functions.
+Interview Tip
+
+For fresher interviews, focus on these string programs:
+
+✅ String Length
+✅ Reverse String
+✅ Palindrome String
+✅ String Copy
+✅ String Concatenation
+✅ String Comparison
+✅ Vowel Count
+✅ Word Count
+✅ Anagram Check
+✅ Character Frequency Count
